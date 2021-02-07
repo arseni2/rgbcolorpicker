@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<p>ttl <input id="ttl" min="0" max="255" step="1" type="range" name=""> <input type="" name="" id="forttl"></p>
+		<p>rtl <input id="rtl" min="0" max="255" step="1" type="range" name=""> <input type="" name="" id="forrtl"></p>
+		<p>ltl <input id="ltl" min="0" max="255" step="1" type="range" name=""> <input type="" name="" id="forltl"></p>
+		<p id="cub" style="width: 50px; height: 50px; background-color: green;"></p>
+		<div id="result"></div>
+	</div>
+<script type="text/javascript">
+forttl.oninput = (e)=>{
+ttl.value = forttl.value
+cub.setAttribute("style", `background-color: rgb(${Number(rtl.value)}, ${Number(ttl.value)}, ${Number(ltl.value)}); display: block; width: 50px; height: 50px;`);
+result.innerHTML = `rgb(${Number(rtl.value)}, ${Number(ttl.value)}, ${Number(ltl.value)})`
+}
+forrtl.oninput = (e)=>{
+rtl.value = forrtl.value
+cub.setAttribute("style", `background-color: rgb(${Number(rtl.value)}, ${Number(ttl.value)}, ${Number(ltl.value)}); display: block; width: 50px; height: 50px;`);
+result.innerHTML = `rgb(${Number(rtl.value)}, ${Number(ttl.value)}, ${Number(ltl.value)})`
+}
+forltl.oninput = (e)=>{
+ltl.value = forltl.value
+cub.setAttribute("style", `background-color: rgb(${Number(rtl.value)}, ${Number(ttl.value)}, ${Number(ltl.value)}); display: block; width: 50px; height: 50px;`);
+result.innerHTML = `rgb(${Number(rtl.value)}, ${Number(ttl.value)}, ${Number(ltl.value)})`
+}
+rtl.oninput = function fun1(e) {
+	//console.log(e)
+	let valr = rtl.value
+	let valt = ttl.value
+	let vall = ltl.value
+	//console.log(val)
+	//cub.style.backgroundColor = `background-color: rgb(${Number(val)}, ${Number(val)}, ${Number(val)})`
+	cub.setAttribute("style", `background-color: rgb(${Number(valr)}, ${Number(valt)}, ${Number(vall)}); display: block; width: 50px; height: 50px;`);
+	forrtl.value = rtl.value;
+	forttl.value = ttl.value
+	forltl.value = ltl.value
+	result.innerHTML = `rgb(${Number(valt)}, ${Number(valr)}, ${Number(vall)})`
+	//console.log(`background-color: rgb(${Number(val)}, ${Number(val)}, ${Number(val)})`)
+}
+ttl.oninput = function fun1(e) {
+	//console.log(e)
+	let valr = rtl.value
+	let valt = ttl.value
+	let vall = ltl.value
+	//console.log(val)
+	//cub.style.backgroundColor = `background-color: rgb(${Number(val)}, ${Number(val)}, ${Number(val)})`
+	cub.setAttribute("style", `background-color: rgb(${Number(valr)}, ${Number(valt)}, ${Number(vall)}); display: block; width: 50px; height: 50px;`);
+	forrtl.value = rtl.value;
+	forttl.value = ttl.value
+	forltl.value = ltl.value
+	result.innerHTML = `rgb(${Number(valt)}, ${Number(valr)}, ${Number(vall)})`
+	//console.log(`background-color: rgb(${Number(val)}, ${Number(val)}, ${Number(val)})`)
+}
+ltl.oninput = function fun1(e) {
+	//console.log(e)
+	let valr = rtl.value
+	let valt = ttl.value
+	let vall = ltl.value
+	//console.log(val)
+	//cub.style.backgroundColor = `background-color: rgb(${Number(val)}, ${Number(val)}, ${Number(val)})`
+	cub.setAttribute("style", `background-color: rgb(${Number(valr)}, ${Number(valt)}, ${Number(vall)}); display: block; width: 50px; height: 50px;`);
+	forrtl.value = rtl.value;
+	forttl.value = ttl.value
+	forltl.value = ltl.value
+	result.innerHTML = `rgb(${Number(valt)}, ${Number(valr)}, ${Number(vall)})`
+	//console.log(`background-color: rgb(${Number(val)}, ${Number(val)}, ${Number(val)})`)
+}
+</script>
+</body>
+</html>
